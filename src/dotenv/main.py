@@ -102,7 +102,7 @@ class DotEnv:
             return False
 
         for k, v in self.dict().items():
-            if k in os.environ and self.override:
+            if k in os.environ and not self.override:
                 continue
             if v is not None:
                 os.environ[k] = v
